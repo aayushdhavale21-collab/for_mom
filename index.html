@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Mother's Day, Mom!</title>
+    <style>
+        /* --- Reset & Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1, #f9bec7);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #4a0e17;
+            overflow-x: hidden;
+            text-align: center;
+            padding-bottom: 100px;
+        }
+
+        /* --- Animations --- */
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* --- Floating Background Elements --- */
+        .heart {
+            position: fixed;
+            bottom: -10%;
+            color: #ff4d6d;
+            font-size: 24px;
+            user-select: none;
+            pointer-events: none;
+            z-index: 1;
+            animation: floatUp 6s linear infinite;
+        }
+
+        /* --- Content Container --- */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header Section --- */
+        header {
+            margin-top: 50px;
+            animation: slideIn 1.5s ease-out;
+        }
+        h1 {
+            font-size: 3.5rem;
+            color: #c9184a;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            display: inline-block;
+            animation: pulse 2.5s infinite ease-in-out;
+        }
+        .subtitle {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #800f2f;
+            margin-bottom: 30px;
+        }
+
+        /* --- Memory Sections (Photos + Paragraphs) --- */
+        .memory-card {
+            background: rgba(255, 255, 255, 0.88);
+            border-radius: 24px;
+            padding: 35px;
+            margin: 50px auto;
+            box-shadow: 0 10px 30px rgba(229, 56, 59, 0.12);
+            backdrop-filter: blur(8px);
+            border: 2px solid #ffb3c1;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.8s ease-out;
+        }
+        /* Class active when scrolled into view */
+        .memory-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .memory-card:hover {
+            transform: translateY(-8px) scale(1.02) !important;
+            box-shadow: 0 18px 40px rgba(229, 56, 59, 0.22);
+        }
+
+        /* --- Photos --- */
+        .photo-frame {
+            width: 100%;
+            max-width: 480px;
+            height: 320px;
+            margin: 0 auto 25px auto;
+            border: 12px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+            border-radius: 12px;
+            overflow: hidden;
+            animation: float 4s ease-in-out infinite;
+        }
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .photo-frame:hover img {
+            transform: scale(1.08);
+        }
+
+        /* --- Text content --- */
+        h3 {
+            font-size: 1.8rem;
+            color: #a4133c;
+            margin-bottom: 12px;
+        }
+        p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #5c0f24;
+        }
+
+        /* --- Interactive Button --- */
+        .love-button {
+            background: linear-gradient(45deg, #ff4d6d, #ff758f);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(255, 77, 109, 0.4);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .love-button:hover {
+            background: linear-gradient(45deg, #ff758f, #ff4d6d);
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 10px 25px rgba(201, 24, 74, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Happy Mother's Day, Mom! ❤️</h1>
+            <p class="subtitle">A little walk down memory lane with my favorite person.</p>
+        </header>
+
+        <div class="memory-card">
+            <div class="photo-frame">
+                <img src="WhatsApp Image 2026-05-09 at 20.48.25.jpeg" alt="Mom and Me 1">
+            </div>
+            <h3>To My Beautiful Mom</h3>
+            <p>
+                From the very beginning, you've filled my life with so much happiness, comfort, and unconditional support. No matter where we are or what we're doing, being by your side is always my favorite place to be. Thank you for always guiding me with your endless warmth.
+            </p>
+        </div>
+
+        <div class="memory-card">
+            <div class="photo-frame" style="animation-delay: 1s;">
+                <img src="WhatsApp Image 2026-05-09 at 20.48.25 (1).jpeg" alt="Mom and Me 2">
+            </div>
+            <h3>Countless Happy Memories</h3>
+            <p>
+                Every single memory we share is a reminder of how lucky I am to have you. You are not only the best mother in the world, but my greatest cheerleader and my absolute best friend. Thank you for making every day feel special and full of love.
+            </p>
+        </div>
+
+        <div class="memory-card">
+            <div class="photo-frame" style="animation-delay: 2s;">
+                <img src="WhatsApp Image 2026-05-09 at 20.48.25 (2).jpeg" alt="Mom and Me 3">
+            </div>
+            <h3>I Love You to the Moon and Back</h3>
+            <p>
+                I hope this small surprise brings a huge smile to your face today! May your Mother's Day be packed with as much joy, peace, and sweet laughter as you have continuously gifted to me. You mean the entire world to me, Mom!
+            </p>
+        </div>
+
+        <button class="love-button" onclick="burstHearts()">Click for a Hug! 🤗💖</button>
+
+    </div>
+
+    <script>
+        // 1. Gentle continuous floating background elements
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = ['❤️', '💖', '💝', '🌸', '💕', '✨'][Math.floor(Math.random() * 6)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+        setInterval(createHeart, 350);
+
+        // 2. Extra explosive burst of hearts when clicking the button
+        function burstHearts() {
+            for (let i = 0; i < 25; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart');
+                    heart.innerHTML = ['❤️', '💖', '✨'][Math.floor(Math.random() * 3)];
+                    heart.style.left = (Math.random() * 80 + 10) + 'vw';
+                    heart.style.bottom = '10%';
+                    heart.style.animationDuration = (Math.random() * 2 + 1) + 's';
+                    heart.style.fontSize = '28px';
+                    document.body.appendChild(heart);
+                    setTimeout(() => heart.remove(), 3000);
+                }, i * 40);
+            }
+        }
+
+        // 3. Scroll-animation trigger: Cards fade and slide up when scrolling down
+        const cards = document.querySelectorAll('.memory-card');
+        const checkCards = () => {
+            const triggerBottom = window.innerHeight * 0.85;
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < triggerBottom) {
+                    card.classList.add('show');
+                }
+            });
+        };
+        window.addEventListener('scroll', checkCards);
+        checkCards(); // Trigger once on load
+    </script>
+</body>
+</html>
